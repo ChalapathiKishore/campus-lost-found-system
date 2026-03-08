@@ -102,5 +102,7 @@ Registration limited to college email domain
 ### 👨‍💻 Author
 
 Chalapathi Kishore
+
 ECE Student
+
 G. Pulla Reddy Engineering College
