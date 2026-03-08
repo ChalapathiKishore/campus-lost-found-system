@@ -41,7 +41,7 @@ Supabase | Backend & database |
 Netlify | Hosting & deployment |
 GitHub | Version control |
 
----
+
 
 ## 📂 Project Structure
 campus-lost-found
@@ -62,7 +62,7 @@ campus-lost-found
 │
 └── README.md
 
----
+
 
 ## ⚙️ Setup Instructions
 
