@@ -67,7 +67,7 @@ campus-lost-found
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone Repository
-git clone https://github.com/yourusername/campus-lost-found-system.git
+git clone https://github.com/ChalapathiKishore/campus-lost-found-system.git
 
 ### 2️⃣ Open Project
 
