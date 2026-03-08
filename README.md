@@ -46,20 +46,35 @@ GitHub | Version control |
 ## 📂 Project Structure
 campus-lost-found
 │
+
 ├── index.html
+
 ├── register.html
+
 ├── dashboard.html
+
 ├── admin.html
+
 ├── found-items.html
+
 ├── report-lost.html
+
 │
+
 ├── css
+
 │ └── style.css
+
 │
+
 ├── js
+
 │ ├── app.js
+
 │ └── env.js
+
 │
+
 └── README.md
 
 
