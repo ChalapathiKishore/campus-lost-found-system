@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
+
+<div class="max-w-5xl mx-auto p-6">
+
+<h1 class="text-3xl font-bold text-white mb-6">
+Admin Dashboard
+</h1>
+
+<!-- LOGOUT BUTTON -->
+
+<!-- LOGOUT BUTTON -->
+
+<div class="mb-6">
+<button onclick="logout()"
+class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded w-fit">
+Logout
+</button>
+</div>
+
+<!-- SEARCH BAR -->
+
+<div class="mb-6">
+
+<input id="adminSearch"
+placeholder="Search item or email..."
+oninput="loadClaims(); loadLostItemsAdmin();"
+class="border p-2 rounded w-80">
+
+</div>
+
+<!-- CLAIM REQUESTS -->
+
+<h2 class="text-xl font-semibold text-white mb-2">
+Claim Requests
+</h2>
+
+<div id="claims"
+class="bg-white p-4 rounded shadow max-h-[350px] overflow-y-auto space-y-3 mb-8">
+</div>
+
+<!-- LOST ITEMS -->
+
+<h2 class="text-xl font-semibold text-white mb-2">
+Reported Lost Items
+</h2>
+
+<div id="lostAdmin"
+class="bg-white p-4 rounded shadow max-h-[300px] overflow-y-auto space-y-3">
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/env.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+initAdmin()
+</script>
+
+<!-- Toast Message -->
+<div id="toast"
+class="fixed bottom-5 right-5 px-4 py-2 rounded text-white bg-green-500 opacity-0 transition-opacity duration-300 pointer-events-none">
+Message
+</div>
+
+</body>
+</html>

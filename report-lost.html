@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Lost Item</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
+
+<div class="bg-white p-8 rounded shadow max-w-lg w-full">
+
+<h2 class="text-2xl font-bold mb-6 text-center">
+Report Lost Item
+</h2>
+
+<input id="item"
+placeholder="Item Name"
+class="w-full border p-2 mb-3 rounded">
+
+<textarea id="description"
+placeholder="Description"
+class="w-full border p-2 mb-3 rounded"></textarea>
+
+<input id="location"
+placeholder="Where Lost"
+class="w-full border p-2 mb-3 rounded">
+
+<input type="file" id="lostPhoto"
+class="w-full border p-2 mb-4 rounded">
+
+<button onclick="reportLost()"
+class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full">
+Submit
+</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/env.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Toast Message -->
+<div id="toast"
+class="fixed bottom-5 right-5 px-4 py-2 rounded text-white bg-green-500 opacity-0 transition-opacity duration-300 pointer-events-none">
+Message
+</div>
+</body>
+</html>

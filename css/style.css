@@ -1,0 +1,100 @@
+/* Page background */
+
+body{
+background: linear-gradient(120deg,#3b82f6,#6366f1,#9333ea);
+min-height:100vh;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Card container */
+
+.auth-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+width:380px;
+margin:auto;
+}
+
+
+/* Input fields */
+
+input, textarea{
+width:100%;
+padding:10px;
+border:1px solid #d1d5db;
+border-radius:6px;
+margin-bottom:12px;
+}
+
+input:focus{
+outline:none;
+border-color:#3b82f6;
+box-shadow:0 0 5px rgba(59,130,246,0.4);
+}
+
+
+/* Buttons */
+
+button{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px;
+background:#3b82f6;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+
+/* Green button */
+
+.btn-green{
+background:#22c55e;
+}
+
+.btn-green:hover{
+background:#16a34a;
+}
+
+
+/* Links */
+
+.auth-link a{
+color:#3b82f6;
+text-decoration:none;
+font-weight:600;
+}
+
+.auth-link a:hover{
+text-decoration:underline;
+}
+
+
+/* Scroll containers */
+
+.scroll-box{
+max-height:300px;
+overflow-y:auto;
+padding-right:5px;
+}
+
+
+/* Scrollbar style */
+
+.scroll-box::-webkit-scrollbar{
+width:6px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb{
+background:#9ca3af;
+border-radius:10px;
+}

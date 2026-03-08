@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
+
+<div class="bg-white p-8 rounded shadow w-96">
+
+<h2 class="text-2xl font-bold mb-6 text-center">
+Student Registration
+</h2>
+
+<input id="name" placeholder="Full Name"
+class="w-full border p-2 mb-3 rounded">
+
+<input id="roll" placeholder="Roll Number"
+class="w-full border p-2 mb-3 rounded">
+
+<input id="email" placeholder="College Email"
+class="w-full border p-2 mb-3 rounded">
+
+<input id="password" type="password" placeholder="Password"
+class="w-full border p-2 mb-4 rounded">
+
+<button onclick="registerStudent()"
+class="bg-blue-500 hover:bg-blue-600 text-white w-full py-2 rounded">
+Register
+</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/env.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Toast Message -->
+<div id="toast"
+class="fixed bottom-5 right-5 px-4 py-2 rounded text-white bg-green-500 opacity-0 transition-opacity duration-300 pointer-events-none">
+Message
+</div>
+</body>
+</html>
