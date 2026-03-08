@@ -80,12 +80,18 @@ js/env.js
 
 Add your Supabase keys:
 
-```javascript
+javascript
 window.env = {
 SUPABASE_URL: "https://your-project.supabase.co",
 SUPABASE_ANON_KEY: "your_anon_key"
 }
-🔐 Security Notes
+
+
+4️⃣ Run Locally
+
+Use Live Server extension in VS Code.
+
+### 🔐 Security Notes
 
 Only Supabase public anon key is used
 
@@ -93,34 +99,8 @@ Service role keys are not exposed
 
 Registration limited to college email domain
 
-👨‍💻 Author
+### 👨‍💻 Author
 
 Chalapathi Kishore
-
 ECE Student
 G. Pulla Reddy Engineering College
-
-⭐ If you like this project
-
-Give it a star on GitHub ⭐
-
-
----
-
-# After Adding README
-
-Run:
-
-
-git add README.md
-git commit -m "Added project README"
-git push
-
-
----
-
-Your GitHub repo will now look **much more professional**.
-
----
-
-If you want, I can also help you create **3 screenshots (login, dashboard, admin)** that look
