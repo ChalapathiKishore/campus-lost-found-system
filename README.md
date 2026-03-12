@@ -6,7 +6,7 @@ The system includes **student and admin dashboards** to manage lost and found it
 ---
 
 ## 🚀 Live Demo
-https://effulgent-donut-d56ae0.netlify.app/
+https://smartcampus2system.netlify.app/
 
 ---
 
