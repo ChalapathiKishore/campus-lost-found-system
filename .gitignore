@@ -1,3 +1,10 @@
+# env
+.env
+env.js
+
+# node
+node_modules
+
 # system
 .DS_Store
 Thumbs.db
@@ -5,5 +12,5 @@ Thumbs.db
 # logs
 *.log
 
-# node
-node_modules
+# build
+dist
