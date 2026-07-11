@@ -1,4 +1,4 @@
 window.env = {
-SUPABASE_URL: "https://xlbgdeidxwuuhreatrty.supabase.co",
-SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhsYmdkZWlkeHd1dWhyZWF0cnR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4MTE4OTgsImV4cCI6MjA4ODM4Nzg5OH0.eZTP3cJKTKc1PKLFMSUP043vh_P295RL2a6DhqLjRXQ"
-}
+  SUPABASE_URL: "https://xaskayclekjwonxbuxrx.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_4N3RZcBUK7mcMKU23oecTw_uavq6q0A"
+};
