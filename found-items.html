@@ -1,49 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Found Items</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>Found Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen">
+<body class="bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 min-h-screen">
 
-<div class="max-w-5xl mx-auto p-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
 
-<h1 class="text-3xl font-bold mb-6 text-white">
-Campus Lost & Found
-</h1>
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center
+                sm:justify-between gap-4 mb-8">
 
-<input id="search"
-placeholder="Search item name..."
-oninput="loadItems()"
-class="w-full border p-2 rounded mb-6">
+        <div>
+            <p class="text-blue-100 text-sm font-medium">
+                Campus Lost & Found
+            </p>
 
-<h2 class="text-xl font-bold text-white mb-3">
-Found Items
-</h2>
+            <h1 class="text-3xl sm:text-4xl font-bold text-white">
+                Found & Lost Items
+            </h1>
 
-<div id="foundItems"
-class="bg-white p-4 rounded shadow space-y-4 mb-6 max-h-[300px] overflow-y-auto">
+            <p class="text-blue-100 mt-1">
+                Search for items reported on campus
+            </p>
+        </div>
+
+        <!-- Dashboard Button -->
+        <a href="dashboard.html"
+           class="w-full sm:w-auto text-center
+                  bg-white/15 hover:bg-white/25
+                  border border-white/20
+                  text-white font-semibold
+                  px-6 py-3 rounded-xl
+                  transition">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- Search -->
+    <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-5 mb-8">
+
+        <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Search Items
+        </label>
+
+        <div class="relative">
+
+            <span class="absolute left-4 top-3.5 text-gray-400">
+                🔍
+            </span>
+
+            <input
+                id="search"
+                placeholder="Search by item name..."
+                oninput="loadItems()"
+                class="w-full border border-gray-300
+                       p-3 pl-11 rounded-xl
+                       focus:ring-2 focus:ring-blue-500
+                       focus:border-blue-500
+                       outline-none">
+
+        </div>
+
+    </div>
+
+
+    <!-- Items Grid -->
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+
+
+        <!-- Found Items -->
+        <section>
+
+            <div class="flex items-center justify-between mb-3">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white">
+                        Found Items
+                    </h2>
+
+                    <p class="text-sm text-blue-100">
+                        Items reported as found
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-xl
+                            bg-green-500/20
+                            flex items-center justify-center
+                            text-xl">
+                    📦
+                </div>
+
+            </div>
+
+
+            <div
+                id="foundItems"
+                class="bg-gray-50 p-4 rounded-2xl shadow-xl
+                       space-y-4
+                       min-h-[250px]
+                       max-h-[600px]
+                       overflow-y-auto">
+
+            </div>
+
+        </section>
+
+
+        <!-- Lost Items -->
+        <section>
+
+            <div class="flex items-center justify-between mb-3">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white">
+                        Lost Items
+                    </h2>
+
+                    <p class="text-sm text-blue-100">
+                        Items reported as lost
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-xl
+                            bg-red-500/20
+                            flex items-center justify-center
+                            text-xl">
+                    🔍
+                </div>
+
+            </div>
+
+
+            <div
+                id="lostItems"
+                class="bg-gray-50 p-4 rounded-2xl shadow-xl
+                       space-y-4
+                       min-h-[250px]
+                       max-h-[600px]
+                       overflow-y-auto">
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <div class="text-center text-blue-100 text-sm mt-8">
+        Campus Lost & Found Management System
+    </div>
+
 </div>
-<h2 class="text-xl font-bold text-white mb-3">
-Lost Items Reported
-</h2>
 
-<div id="lostItems"
-class="bg-white p-4 rounded shadow space-y-4 max-h-[300px] overflow-y-auto">
-</div>
-
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="js/env.js"></script>
 <script src="js/app.js"></script>
 
-<!-- Toast Message -->
+
+<!-- Toast -->
 <div id="toast"
-class="fixed bottom-5 right-5 px-4 py-2 rounded text-white bg-green-500 opacity-0 transition-opacity duration-300 pointer-events-none">
-Message
+     class="fixed bottom-5 right-5 px-5 py-3
+            rounded-xl text-white
+            bg-green-500 opacity-0
+            transition-opacity duration-300
+            pointer-events-none shadow-lg">
+    Message
 </div>
+
 </body>
 </html>

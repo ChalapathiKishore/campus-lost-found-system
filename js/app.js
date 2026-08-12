@@ -206,7 +206,11 @@ async function reportLost(){
 const title=document.getElementById("item").value
 const description=document.getElementById("description").value
 const location=document.getElementById("location").value
-const file=document.getElementById("lostPhoto").files[0]
+
+const cameraFile = document.getElementById("lostCameraPhoto")?.files[0]
+const selectedFile = document.getElementById("lostPhoto")?.files[0]
+
+const file = cameraFile || selectedFile
 
 const {data:{user}}=await supabaseClient.auth.getUser()
 
@@ -394,6 +398,27 @@ await loadClaims()
 
 await loadLostItemsAdmin()
 
+}
+
+
+// =========================
+// CHECK STUDENT LOGIN
+// =========================
+
+async function checkStudentLogin(){
+
+    const {data:{user}} = await supabaseClient.auth.getUser()
+
+    if(!user){
+
+        showToast("Please login first","error")
+
+        window.location = "index.html"
+
+        return false
+    }
+
+    return true
 }
 
 
