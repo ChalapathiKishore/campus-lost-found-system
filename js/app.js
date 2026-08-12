@@ -121,61 +121,82 @@ window.location="index.html"
 
 async function addFoundItem(){
 
-const title=document.getElementById("title").value
-const description=document.getElementById("description").value
-const location=document.getElementById("location").value
-const file=document.getElementById("photo").files[0]
+    const title = document.getElementById("title").value
+    const description = document.getElementById("description").value
+    const location = document.getElementById("location").value
 
-const {data:{user}}=await supabaseClient.auth.getUser()
+    const cameraFile = document.getElementById("cameraPhoto").files[0]
+    const selectedFile = document.getElementById("filePhoto").files[0]
 
-if(!user){
-showToast("Login first","error")
-return
+    // Use whichever photo the user selected
+    const file = cameraFile || selectedFile
+
+    const {data:{user}} = await supabaseClient.auth.getUser()
+
+    if(!user){
+        showToast("Login first","error")
+        return
+    }
+
+    let imageUrl = null
+
+    if(file){
+
+        const fileName = Date.now() + "_" + file.name
+
+        const {error} = await supabaseClient
+            .storage
+            .from("item-images")
+            .upload(fileName, file)
+
+        if(error){
+            showToast("Image upload failed","error")
+            return
+        }
+
+        const {data:urlData} = supabaseClient
+            .storage
+            .from("item-images")
+            .getPublicUrl(fileName)
+
+        imageUrl = urlData.publicUrl
+    }
+
+    await supabaseClient
+        .from("items")
+        .insert({
+
+            title: title,
+            description: description,
+            location: location,
+            type: "found",
+            reported_by: user.email,
+            reporter_role: "student",
+            status: "available",
+            image_url: imageUrl
+
+        })
+
+    showToast("Found item reported")
 }
 
-let imageUrl=null
+document.getElementById("cameraPhoto")?.addEventListener("change", function(){
 
-if(file){
-
-const fileName=Date.now()+"_"+file.name
-
-const {error}=await supabaseClient
-.storage
-.from("item-images")
-.upload(fileName,file)
-
-if(error){
-showToast("Image upload failed")
-return
-}
-
-const {data:urlData}=supabaseClient
-.storage
-.from("item-images")
-.getPublicUrl(fileName)
-
-imageUrl=urlData.publicUrl
-
-}
-
-await supabaseClient.from("items").insert({
-
-title:title,
-description:description,
-location:location,
-type:"found",
-reported_by:user.email,
-reporter_role:"student",
-status:"available",
-image_url:imageUrl
+    if(this.files[0]){
+        document.getElementById("photoName").textContent =
+            "📷 " + this.files[0].name
+    }
 
 })
 
-showToast("Found item reported")
+document.getElementById("filePhoto")?.addEventListener("change", function(){
 
-}
+    if(this.files[0]){
+        document.getElementById("photoName").textContent =
+            "📁 " + this.files[0].name
+    }
 
-
+})
 // =========================
 // REPORT LOST ITEM
 // =========================

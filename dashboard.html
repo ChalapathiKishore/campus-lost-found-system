@@ -49,8 +49,42 @@ class="w-full border p-2 mb-3 rounded">
 placeholder="Description"
 class="w-full border p-2 mb-3 rounded"></textarea>
 
-<input type="file" id="photo"
-class="w-full border p-2 mb-4 rounded">
+<div class="mb-4">
+    <label class="block font-semibold mb-2">
+        Item Photo
+    </label>
+
+    <div class="flex gap-3">
+        <label
+            for="cameraPhoto"
+            class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center px-4 py-2 rounded cursor-pointer">
+            📷 Take Photo
+        </label>
+
+        <label
+            for="filePhoto"
+            class="flex-1 bg-gray-600 hover:bg-gray-700 text-white text-center px-4 py-2 rounded cursor-pointer">
+            📁 Choose File
+        </label>
+    </div>
+
+    <input
+        type="file"
+        id="cameraPhoto"
+        accept="image/*"
+        capture="environment"
+        class="hidden">
+
+    <input
+        type="file"
+        id="filePhoto"
+        accept="image/*"
+        class="hidden">
+
+    <p id="photoName" class="text-sm text-gray-500 mt-2">
+        No photo selected
+    </p>
+</div>
 
 <button onclick="addFoundItem()"
 class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full">
